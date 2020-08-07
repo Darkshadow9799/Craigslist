@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2 style="text-align: center">{{ search | title }}</h2>
+        <table>
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>URL</th>
+                    <th>Price</th>
+                  </tr>
+                </thead>
+        {% for post in final_postings %}
+                <tbody>
+                  <tr>
+                    <td>{{ post.0 }}</td>
+                    <td><a href="{{ post.1 }}">{{ post.1 }}</a></td>
+                    <td>{{ post.2 }}</td>
+                  </tr>
+                </tbody>
+        {% endfor %}
+        </table>
+{% endblock content %}
